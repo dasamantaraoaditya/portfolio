@@ -18,6 +18,7 @@ const App = () => {
 
     return (
         <div className="portfolio">
+            <div className="grid-overlay"></div>
             <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
             <Hero scrollToSection={scrollToSection} />
             <About />

@@ -1,37 +1,37 @@
 export const skills = {
     languages: [
-        { name: 'Java', icon: '☕', color: '#f89820' },
-        { name: 'JavaScript', icon: '🟨', color: '#f7df1e' },
-        { name: 'TypeScript', icon: '🔷', color: '#3178c6' },
-        { name: 'Python', icon: '🐍', color: '#3776ab' },
-        { name: 'SQL', icon: '🗄️', color: '#00758f' }
+        { name: 'Java', icon: '☕', color: '#f89820', level: 0.9, years: '8+' },
+        { name: 'JavaScript', icon: '🟨', color: '#f7df1e', level: 0.95, years: '8+' },
+        { name: 'TypeScript', icon: '🔷', color: '#3178c6', level: 0.9, years: '5+' },
+        { name: 'Python', icon: '🐍', color: '#3776ab', level: 0.75, years: '4+' },
+        { name: 'SQL', icon: '🗄️', color: '#00758f', level: 0.85, years: '8+' }
     ],
     frameworks: [
-        { name: 'Spring Boot', icon: '🍃', color: '#6db33f' },
-        { name: 'Angular', icon: '🅰️', color: '#dd0031' },
-        { name: 'Vue.js', icon: '💚', color: '#42b883' },
-        { name: 'React', icon: '⚛️', color: '#61dafb' },
-        { name: 'Node.js', icon: '🟢', color: '#339933' }
+        { name: 'Spring Boot', icon: '🍃', color: '#6db33f', level: 0.9, years: '7+' },
+        { name: 'Angular', icon: '🅰️', color: '#dd0031', level: 0.85, years: '6+' },
+        { name: 'Vue.js', icon: '💚', color: '#42b883', level: 0.75, years: '3+' },
+        { name: 'React', icon: '⚛️', color: '#61dafb', level: 0.9, years: '5+' },
+        { name: 'Node.js', icon: '🟢', color: '#339933', level: 0.85, years: '6+' }
     ],
     aiml: [
-        { name: 'Generative AI', icon: '🤖', color: '#ff6b6b' },
-        { name: 'Palantir', icon: '🔮', color: '#9b59b6' },
-        { name: 'OpenAI APIs', icon: '🧠', color: '#10a37f' },
-        { name: 'Agentic AI', icon: '🎯', color: '#e74c3c' }
+        { name: 'Generative AI', icon: '🤖', color: '#ff6b6b', level: 0.85, years: '2+' },
+        { name: 'Palantir', icon: '🔮', color: '#9b59b6', level: 0.8, years: '3+' },
+        { name: 'OpenAI APIs', icon: '🧠', color: '#10a37f', level: 0.9, years: '2+' },
+        { name: 'Agentic AI', icon: '🎯', color: '#e74c3c', level: 0.8, years: '1+' }
     ],
     cloud: [
-        { name: 'AWS', icon: '☁️', color: '#ff9900' },
-        { name: 'Azure DevOps', icon: '🔵', color: '#0078d4' },
-        { name: 'Jenkins', icon: '⚙️', color: '#d24939' },
-        { name: 'Docker', icon: '🐳', color: '#2496ed' },
-        { name: 'CI/CD', icon: '🔄', color: '#6366f1' }
+        { name: 'AWS', icon: '☁️', color: '#ff9900', level: 0.75, years: '5+' },
+        { name: 'Azure DevOps', icon: '🔵', color: '#0078d4', level: 0.85, years: '4+' },
+        { name: 'Jenkins', icon: '⚙️', color: '#d24939', level: 0.8, years: '6+' },
+        { name: 'Docker', icon: '🐳', color: '#2496ed', level: 0.85, years: '5+' },
+        { name: 'CI/CD', icon: '🔄', color: '#6366f1', level: 0.9, years: '8+' }
     ],
     databases: [
-        { name: 'PostgreSQL', icon: '🐘', color: '#336791' },
-        { name: 'MySQL', icon: '🐬', color: '#4479a1' },
-        { name: 'MongoDB', icon: '🍃', color: '#47a248' },
-        { name: 'Couchbase', icon: '🛋️', color: '#ea2328' },
-        { name: 'Elastic Search', icon: '🔍', color: '#005571' }
+        { name: 'PostgreSQL', icon: '🐘', color: '#336791', level: 0.85, years: '6+' },
+        { name: 'MySQL', icon: '🐬', color: '#4479a1', level: 0.9, years: '8+' },
+        { name: 'MongoDB', icon: '🍃', color: '#47a248', level: 0.8, years: '5+' },
+        { name: 'Couchbase', icon: '🛋️', color: '#ea2328', level: 0.75, years: '4+' },
+        { name: 'Elastic Search', icon: '🔍', color: '#005571', level: 0.7, years: '3+' }
     ]
 };
 
@@ -75,11 +75,14 @@ export const projects = [
     {
         name: 'Nothingness',
         period: 'Nov 2017 – Feb 2018',
-        description: 'Interactive hub for games and utilities using HTML5, CSS/SCSS, jQuery, and Bootstrap'
+        description: 'An experimental playground for reactive web technologies featuring interactive simulations—from mechanical crane logic to functional wall clocks—built with Bootstrap, jQuery, and custom CSS.',
+        liveDemo: 'https://dasamantaraoaditya.github.io/',
+        githubRepo: 'https://github.com/dasamantaraoaditya/dasamantaraoaditya.github.io'
     },
     {
         name: 'Gat-A-Grip',
         period: 'Aug 2017',
-        description: 'Task management application inspired by Slack and Jira, built with Django and Bootstrap'
+        description: 'Task management application inspired by Slack and Jira, built with Django and Bootstrap',
+        githubRepo: 'https://github.com/dasamantaraoaditya/Gat-A-Grip'
     }
 ];
