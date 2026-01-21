@@ -218,13 +218,11 @@ p {
 .logo {
   font-size: 1.25rem;
   font-weight: 900;
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--neon-cyan);
   cursor: pointer;
   transition: transform var(--transition-normal);
   letter-spacing: -0.05em;
+  filter: drop-shadow(0 0 10px var(--glow-cyan));
 }
 
 .logo:hover {
@@ -629,19 +627,13 @@ section {
   font-weight: 900;
   margin-bottom: 0.75rem;
   line-height: 1;
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta), var(--neon-amber));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   filter: drop-shadow(0 0 20px var(--glow-cyan));
   font-family: 'Inter', sans-serif;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--neon-cyan);
 }
 
 .hero-subtitle {
@@ -691,10 +683,7 @@ section {
 .stat-number {
   font-size: 3rem;
   font-weight: 900;
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--neon-cyan);
 }
 
 .stat-label {
@@ -763,10 +752,7 @@ section {
   font-weight: 900;
   text-align: center;
   margin-bottom: 2.5rem;
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--neon-cyan);
   filter: drop-shadow(0 0 15px var(--glow-cyan));
   font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
