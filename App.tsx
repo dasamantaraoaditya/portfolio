@@ -417,7 +417,7 @@ const App = () => {
 
             {/* Footer */}
             <footer className="footer">
-                <p>© 2026 Aditya Dasamantharao. Built with React & Framer Motion.</p>
+                <p>© 2026 Aditya Dasamantharao. Built with React & Framer Motion. 🚀 Auto-deployed via Vercel</p>
                 <div className="footer-interests">
                     <span>🧩 Problem Solving</span>
                     <span>✈️ Travelling</span>
