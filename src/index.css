@@ -511,12 +511,12 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.6)), url('/images/hero-bg.png');
+  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.3), rgba(10, 10, 10, 0.5)), url('/images/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   z-index: -1;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .hero-container {
@@ -707,12 +707,12 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.5)), url('/images/about-bg.png');
+  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4)), url('/images/about-bg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   z-index: -1;
-  opacity: 0.6;
+  opacity: 0.75;
 }
 
 .about-content {
@@ -769,13 +769,12 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.7)), url('/images/hero-bg.png');
+  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.5)), url('/images/experience-bg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: grayscale(30%) brightness(80%);
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .experience-container {
@@ -959,12 +958,12 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.6)), url('/images/skills-bg.png');
+  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.5)), url('/images/skills-bg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   z-index: -1;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .skills-grid {
@@ -1107,13 +1106,12 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.7)), url('/images/about-bg.png');
+  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.5)), url('/images/projects-bg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: sepia(20%) brightness(70%);
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .projects-grid {
@@ -1256,12 +1254,12 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.6)), url('/images/contact-bg.png');
+  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.5)), url('/images/contact-bg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   z-index: -1;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .contact-content {
