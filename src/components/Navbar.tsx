@@ -10,10 +10,10 @@ const Navbar = ({ activeSection, scrollToSection }: NavbarProps) => {
     const navItems = [
         { id: 'home', label: 'Home', icon: Home },
         { id: 'about', label: 'About', icon: User },
-        { id: 'experience', label: 'Exp', icon: Briefcase },
+        { id: 'experience', label: 'Experience', icon: Briefcase },
         { id: 'skills', label: 'Skills', icon: Cpu },
-        { id: 'projects', label: 'Work', icon: FolderCode },
-        { id: 'contact', label: 'Mail', icon: Mail },
+        { id: 'projects', label: 'Projects', icon: FolderCode },
+        { id: 'contact', label: 'Contact', icon: Mail },
     ];
 
     return (
