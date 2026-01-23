@@ -232,14 +232,14 @@ p {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
   align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-secondary);
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 1rem;
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: 0.875rem;
@@ -247,6 +247,9 @@ p {
   position: relative;
   letter-spacing: 0.02em;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-links a:hover {
@@ -256,8 +259,30 @@ p {
 
 .nav-links a.active {
   background: var(--neon-cyan);
-  color: var(--bg-primary);
+  color: #0d0d0d;
   box-shadow: 0 0 20px var(--glow-cyan);
+}
+
+.nav-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-icon {
+    display: block;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 0.25rem;
+  }
+
+  .nav-links a {
+    padding: 0.75rem;
+  }
 }
 
 /* Sections */
@@ -605,7 +630,7 @@ section {
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
     text-align: center;
   }
 
@@ -614,8 +639,9 @@ section {
   }
 
   .hero-image-wrapper {
-    max-width: 350px;
+    max-width: 280px;
     margin: 0 auto;
+    order: -1;
   }
 
   .hero-stats {
@@ -624,6 +650,17 @@ section {
 
   .hero-cta {
     justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
   }
 }
 
@@ -943,25 +980,34 @@ section {
 @media (max-width: 768px) {
   .experience-container {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .exp-tabs {
-    width: 100%;
     flex-direction: row;
+    width: 100%;
     overflow-x: auto;
     border-left: none;
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 2px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
+
+  .exp-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .exp-tab-btn {
-    text-align: center;
-    padding: 1rem 1.5rem;
-    min-width: 150px;
+    padding: 1rem;
+    white-space: nowrap;
+    width: auto;
+    justify-content: center;
+    min-width: 120px;
   }
 
-  .exp-tab-btn::before {
+  .exp-tab-btn::after {
     left: 0;
     right: 0;
     top: auto;
@@ -971,8 +1017,20 @@ section {
     transform: scaleX(0);
   }
 
-  .exp-tab-btn.active::before {
+  .exp-tab-btn.active::after {
     transform: scaleX(1);
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  .exp-title {
+    font-size: 1.25rem;
+  }
+
+  .exp-company-link {
+    font-size: 1rem;
   }
 }
 
@@ -1492,6 +1550,9 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .bento-item-large,
   .bento-item-wide {
@@ -1501,26 +1562,16 @@ footer {
   .bento-item-large {
     grid-row: span 1;
   }
-
-  .timeline::before {
-    left: 30px;
-  }
-
-  .timeline-item::after {
-    left: 30px;
-  }
-
-  .timeline-content {
-    width: calc(100% - 80px);
-    margin-left: 80px !important;
-  }
 }
 
 @media (max-width: 768px) {
   .navbar {
     top: auto;
-    bottom: var(--spacing-md);
-    width: calc(100% - 2rem);
+    bottom: 1.5rem;
+    width: 95%;
+    max-width: 500px;
+    padding: 0.5rem;
+    border-radius: 2rem;
   }
 
   .nav-content {
@@ -1537,13 +1588,8 @@ footer {
     width: 100%;
   }
 
-  .nav-links a {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: 0.75rem;
-  }
-
   section {
-    padding: var(--spacing-xl) var(--spacing-sm);
+    padding: 4rem 1.5rem;
   }
 
   .bento-grid {
@@ -1556,19 +1602,38 @@ footer {
 
   .projects-grid {
     grid-template-columns: 1fr;
+    padding: 0;
   }
 
-  .timeline::before {
-    left: 20px;
+  .section-title {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 3rem 1rem;
   }
 
-  .timeline-item::after {
-    left: 20px;
+  .stat-number {
+    font-size: 2rem;
   }
 
-  .timeline-content {
-    width: calc(100% - 60px);
-    margin-left: 60px !important;
+  .contact-link {
+    width: 100%;
+    min-width: auto;
+    justify-content: center;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
   }
 }
 

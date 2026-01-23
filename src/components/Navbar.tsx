@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Home, User, Briefcase, Cpu, FolderCode, Mail } from 'lucide-react';
 
 interface NavbarProps {
     activeSection: string;
@@ -6,6 +7,15 @@ interface NavbarProps {
 }
 
 const Navbar = ({ activeSection, scrollToSection }: NavbarProps) => {
+    const navItems = [
+        { id: 'home', label: 'Home', icon: Home },
+        { id: 'about', label: 'About', icon: User },
+        { id: 'experience', label: 'Experience', icon: Briefcase },
+        { id: 'skills', label: 'Skills', icon: Cpu },
+        { id: 'projects', label: 'Projects', icon: FolderCode },
+        { id: 'contact', label: 'Contact', icon: Mail },
+    ];
+
     return (
         <motion.nav
             className="navbar"
@@ -22,15 +32,16 @@ const Navbar = ({ activeSection, scrollToSection }: NavbarProps) => {
                     AD
                 </motion.div>
                 <ul className="nav-links">
-                    {['home', 'about', 'experience', 'skills', 'projects', 'contact'].map((section) => (
-                        <li key={section}>
+                    {navItems.map((item) => (
+                        <li key={item.id}>
                             <motion.a
-                                onClick={() => scrollToSection(section)}
-                                className={activeSection === section ? 'active' : ''}
+                                onClick={() => scrollToSection(item.id)}
+                                className={activeSection === item.id ? 'active' : ''}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                {section.charAt(0).toUpperCase() + section.slice(1)}
+                                <item.icon size={18} className="nav-icon" />
+                                <span className="nav-label">{item.label}</span>
                             </motion.a>
                         </li>
                     ))}
