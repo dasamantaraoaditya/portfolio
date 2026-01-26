@@ -61,3 +61,27 @@ portfolio/
 ✅ Fixed JSX formatting and spacing issues  
 ✅ Added proper TypeScript configuration  
 ✅ Set up Vite build system
+
+## 📚 Documentation
+
+Comprehensive documentation is available for both the portfolio and WatchHive projects:
+
+- **[PORTFOLIO_OVERVIEW.md](PORTFOLIO_OVERVIEW.md)** - Technical overview of this portfolio website
+- **[WATCHHIVE_REQUIREMENTS.md](WATCHHIVE_REQUIREMENTS.md)** - Complete requirements for WatchHive
+- **[WATCHHIVE_ARCHITECTURE.md](WATCHHIVE_ARCHITECTURE.md)** - Technical architecture for WatchHive
+- **[REPO_STRUCTURE.md](REPO_STRUCTURE.md)** - Quick reference for repository structure
+- **[docs/README.md](docs/README.md)** - Documentation index and quick start guide
+
+### WatchHive Project
+
+WatchHive is a social media platform for movie enthusiasts being integrated into this portfolio. Users can log movies they've watched, follow other users, and engage with a community of film lovers.
+
+**Status**: Planning Phase  
+**Documentation**: See files above for complete details
+
+## 🚀 Deployment
+
+- **Platform**: Vercel
+- **Domain**: adityadasamantharao.com
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
