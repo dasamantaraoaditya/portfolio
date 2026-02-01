@@ -1,0 +1,594 @@
+/* Valentine's Day Page Styles */
+
+.valentine-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #ffecd2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.valentine-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 192, 203, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(255, 105, 180, 0.2) 0%, transparent 50%);
+    animation: backgroundPulse 8s ease-in-out infinite;
+}
+
+@keyframes backgroundPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.floating-cats {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-cat {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5));
+}
+
+.valentine-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 40px;
+    padding: 3rem;
+    max-width: 600px;
+    width: 100%;
+    box-shadow:
+        0 20px 60px rgba(255, 105, 180, 0.4),
+        0 0 100px rgba(255, 182, 193, 0.3);
+    position: relative;
+    z-index: 10;
+    border: 4px solid rgba(255, 182, 193, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.cat-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header-cat-gif {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #ff69b4;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+    object-fit: cover;
+}
+
+.valentine-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    text-align: center;
+    background: linear-gradient(135deg, #ff1493, #ff69b4, #ff1493);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    animation: gradientShift 3s ease infinite;
+    filter: drop-shadow(0 2px 10px rgba(255, 105, 180, 0.3));
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.valentine-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff1493;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.interests {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    min-height: 150px;
+    position: relative;
+}
+
+.yes-button {
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    color: white;
+    border: none;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow:
+        0 10px 30px rgba(255, 20, 147, 0.4),
+        0 0 20px rgba(255, 105, 180, 0.6);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.yes-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.yes-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.yes-button:hover {
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow:
+        0 15px 40px rgba(255, 20, 147, 0.6),
+        0 0 30px rgba(255, 105, 180, 0.8);
+}
+
+.no-button {
+    background: linear-gradient(135deg, #ffc0cb, #ffb6c1);
+    color: #ff1493;
+    border: 3px solid #ff69b4;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+    z-index: 50;
+}
+
+.no-button:hover {
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+    transform: scale(1.05);
+}
+
+.hint-text {
+    text-align: center;
+    color: #ff69b4;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+.extra-plea {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 182, 193, 0.2);
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ff1493;
+}
+
+.cat-footer {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5));
+}
+
+/* Success State */
+.valentine-container.success {
+    background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 50%, #6c5b7b 100%);
+}
+
+.success-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 40px;
+    padding: 4rem;
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    box-shadow:
+        0 30px 80px rgba(255, 105, 180, 0.5),
+        0 0 150px rgba(255, 182, 193, 0.4);
+    position: relative;
+    z-index: 10;
+    border: 5px solid rgba(255, 182, 193, 0.6);
+}
+
+.celebration-header {
+    margin-bottom: 2rem;
+}
+
+.celebration-gif {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 6px solid #ff69b4;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+    object-fit: cover;
+}
+
+.success-title {
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #ff1493, #ff69b4, #ffd700);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    animation: gradientShift 3s ease infinite;
+}
+
+.success-message {
+    font-size: 1.5rem;
+    color: #ff1493;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.celebration-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 4rem;
+    margin: 2rem 0;
+}
+
+.celebration-activities {
+    background: rgba(255, 182, 193, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.celebration-activities p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ff1493;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.celebration-activities ul {
+    list-style: none;
+    padding: 0;
+}
+
+.celebration-activities li {
+    font-size: 1.2rem;
+    color: #ff69b4;
+    padding: 0.5rem 0;
+    font-weight: 600;
+}
+
+.final-message {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 2rem;
+}
+
+/* Confetti Particles */
+.confetti-particle {
+    position: fixed;
+    top: -50px;
+    animation: fall linear forwards;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@keyframes fall {
+    to {
+        top: 100vh;
+        transform: translateX(100px) rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .valentine-container {
+        padding: 1rem;
+    }
+
+    .valentine-card {
+        padding: 2rem 1.5rem;
+        border-radius: 30px;
+    }
+
+    .header-cat-gif {
+        width: 150px;
+        height: 150px;
+    }
+
+    .valentine-title {
+        font-size: 2rem;
+    }
+
+    .valentine-subtitle {
+        font-size: 1rem;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        gap: 1rem;
+        min-height: 120px;
+    }
+
+    .yes-button {
+        padding: 1.2rem 2rem;
+        font-size: 1.3rem;
+    }
+
+    .no-button {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .floating-cat {
+        font-size: 1.8rem;
+    }
+
+    .success-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .celebration-gif {
+        width: 200px;
+        height: 200px;
+    }
+
+    .success-title {
+        font-size: 2.5rem;
+    }
+
+    .success-message {
+        font-size: 1.2rem;
+    }
+
+    .celebration-icons {
+        font-size: 3rem;
+        gap: 1rem;
+    }
+
+    .celebration-activities {
+        padding: 1.5rem;
+    }
+
+    .celebration-activities p {
+        font-size: 1.1rem;
+    }
+
+    .celebration-activities li {
+        font-size: 1rem;
+    }
+
+    .final-message {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .valentine-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .header-cat-gif {
+        width: 120px;
+        height: 120px;
+    }
+
+    .valentine-title {
+        font-size: 1.5rem;
+    }
+
+    .yes-button {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .no-button {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Prevent text selection on buttons */
+.yes-button,
+.no-button {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Mouse Cat Raining Effect */
+.mouse-cat-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    animation: mouseCatDown 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    filter: drop-shadow(0 0 5px rgba(255, 105, 180, 0.5));
+}
+
+@keyframes mouseCatDown {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+        transform: translateY(-10px) rotate(10deg) scale(1.2);
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Stink Inspector Styles */
+.stink-inspector-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 2rem;
+}
+
+.inspector-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    border: 8px solid #ff69b4;
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.sniffing-cat {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.magnifying-glass {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 3rem;
+    animation: explore 3s infinite ease-in-out;
+}
+
+@keyframes explore {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0);
+    }
+
+    25% {
+        transform: translate(-100px, -50px) rotate(-20deg);
+    }
+
+    50% {
+        transform: translate(-150px, 0) rotate(10deg);
+    }
+
+    75% {
+        transform: translate(-50px, -80px) rotate(-10deg);
+    }
+}
+
+.inspector-badge {
+    background: #ff69b4;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.status-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #444;
+    min-height: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.status-text.passed {
+    color: #ff1493;
+}
+
+.progress-bar-container {
+    height: 12px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+}
+
+.passed-badge {
+    background: #ff1493;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-top: 1rem;
+    box-shadow: 0 10px 20px rgba(255, 20, 147, 0.3);
+}
