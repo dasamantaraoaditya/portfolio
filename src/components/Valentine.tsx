@@ -9,23 +9,19 @@ const Valentine = () => {
     const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
     const [isShocked, setIsShocked] = useState(false);
 
-    const noMessages = [
-        "No",
+    const noThoughts = [
         "Are you sure? 🥺",
         "Really sure? 😿",
-        "But... but... the cats! 🐱",
-        "Think of the pizza we could share! 🍕",
+        "But... the cats! 🐱",
+        "Think of the pizza! 🍕",
         "What about cupcakes? 🧁",
-        "We could play carrom together! 🎯",
         "Poker night? 🎴",
-        "The cats are crying now... 😭",
-        "Please reconsider! 💔",
-        "You're breaking my heart! 💔",
-        "One more chance? 🙏",
-        "The cats won't forgive you! 😾",
-        "Think about it... 🤔",
+        "The cats are crying! 😭",
+        "Please? 💔",
+        "Breaking my heart! 💔",
         "Last chance! ⚠️",
-        "Fine, the button is tired now 😴"
+        "I'm so sad... 😿",
+        "Just say yes! ✨"
     ];
 
     const disappointedGifs = [
@@ -96,8 +92,8 @@ const Valentine = () => {
         }, 250);
     };
 
-    const getNoButtonText = () => {
-        return noMessages[Math.min(noCount, noMessages.length - 1)];
+    const getNoThought = () => {
+        return noThoughts[Math.min(noCount - 1, noThoughts.length - 1)];
     };
 
     if (yesPressed) {
@@ -250,6 +246,10 @@ const Valentine = () => {
                         className="yes-button"
                         onClick={handleYesClick}
                         whileTap={{ scale: 0.95 }}
+                        style={{
+                            scale: 1 + noCount * 0.25,
+                        }}
+                        transition={{ type: "spring", stiffness: 300 }}
                     >
                         Yes! 💕
                     </motion.button>
@@ -260,7 +260,7 @@ const Valentine = () => {
                             onClick={handleNoClick}
                             whileHover={{ scale: 1.05 }}
                         >
-                            {getNoButtonText()}
+                            No
                         </motion.button>
                     )}
                 </div>
@@ -300,26 +300,43 @@ const Valentine = () => {
                 </div>
             </motion.div>
             <AnimatePresence>
-                {noCount > 0 && noCount < noMessages.length - 1 && (
-                    <motion.button
-                        key="jumping-no"
-                        className="no-button"
-                        onClick={handleNoClick}
-                        whileHover={{ scale: 1.05 }}
+                {noCount > 0 && (
+                    <div
                         style={{
-                            fontSize: `${Math.max(60, 100 - noCount * 3)}%`,
                             position: 'fixed',
                             left: `${noButtonPosition.x}px`,
                             top: `${noButtonPosition.y}px`,
                             transform: 'translate(-50%, -50%)',
                             zIndex: 10000,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            gap: '10px'
                         }}
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0 }}
                     >
-                        {getNoButtonText()}
-                    </motion.button>
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={noCount}
+                                initial={{ opacity: 0, y: 10, scale: 0.5 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: -10, scale: 0.5 }}
+                                className="no-thought-bubble"
+                            >
+                                {getNoThought()}
+                            </motion.div>
+                        </AnimatePresence>
+                        <motion.button
+                            key="jumping-no"
+                            className="no-button"
+                            onClick={handleNoClick}
+                            whileHover={{ scale: 1.1 }}
+                            style={{
+                                scale: Math.max(0.4, 1 - noCount * 0.05),
+                            }}
+                        >
+                            No
+                        </motion.button>
+                    </div>
                 )}
             </AnimatePresence>
         </div>
