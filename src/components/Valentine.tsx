@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import CatGame from './CatGame';
 import '../styles/valentine.css';
 
 const Valentine = () => {
@@ -165,6 +166,8 @@ const Valentine = () => {
                             <li>😻 And lots of cat cuddles!</li>
                         </ul>
                     </div>
+
+                    <CatGame />
 
                     <motion.div
                         className="final-message"
