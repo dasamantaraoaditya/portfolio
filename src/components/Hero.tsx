@@ -1,10 +1,21 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 interface HeroProps {
     scrollToSection: (sectionId: string) => void;
 }
 
 const Hero = ({ scrollToSection }: HeroProps) => {
+    const images = ['/profile-1.png', '/profile-2.png', '/profile-3.jpg'];
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % images.length);
+        }, 3000); // Change image every 3 seconds
+        return () => clearInterval(timer);
+    }, [images.length]);
+
     return (
         <section id="home" className="hero">
             <div className="hero-container">
@@ -15,7 +26,17 @@ const Hero = ({ scrollToSection }: HeroProps) => {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                     <div className="hero-image">
-                        <img src="/profile.jpg" alt="Aditya Dasamantharao" />
+                        <AnimatePresence mode="wait">
+                            <motion.img
+                                key={currentIndex}
+                                src={images[currentIndex]}
+                                alt="Aditya Dasamantharao"
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 1.1 }}
+                                transition={{ duration: 0.5 }}
+                            />
+                        </AnimatePresence>
                     </div>
                 </motion.div>
                 <motion.div
