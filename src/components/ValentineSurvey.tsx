@@ -11,11 +11,11 @@ const ValentineSurvey = ({ onComplete }: ValentineSurveyProps) => {
     const [showHappyMeme, setShowHappyMeme] = useState(false);
 
     // Memes
-    const massageYesMeme = "https://media.tenor.com/Z421lQ8K0QcAAAAC/cat-massage.gif";
-    const massageNoMeme = "https://media.giphy.com/media/l41K3o5TzvmhZwdOS/giphy.gif"; // Sad cat
-    const drinkMeme = "https://media.giphy.com/media/h8NdYZJGH1ZRe/giphy.gif"; // Cat drinking
-    const flowerMeme = "https://media.tenor.com/_uB56lFpXngAAAAC/sniff-flower.gif"; // Cat smelling flower
-    const giftMeme = "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif"; // Cat in box/gift
+    const massageYesMeme = "https://i.pinimg.com/originals/73/b1/79/73b179e8b7b111399288d4a597d4c8ab.gif";
+    const massageNoMeme = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3EyNmxhMThpNWlrdGU5azh4djBqYnNnM2c2azJmN2FvNTNnNzRxMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ev477g37MJORyOWfdG/giphy.gif"; // Sad cat
+    const drinkMeme = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTljMnd6aG9tazNvMWhxb3M0ZnplejQ3NXUxNGY3ZTg1cW9yNmF0ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nPuGJbsZ4EkCu0tC9l/giphy.gif"; // Cat drinking
+    const flowerMeme = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGpqMmpxZjdwM2JnemkxbXkwZG1yYjE3d2E5MWh6ZXJuYmRybXowNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wvYNSqBAMDVx8CEYkt/giphy.gif"; // Cat smelling flower
+    const giftMeme = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnc1M25ka3UxeG5hZXJleXdoNDBoNDRlb3NldzBpbWZwNTI0N2praSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6C5LFuLcnhTZeypW0E/giphy.gif"; // Cat in box/gift
 
     const questions = [
         {
