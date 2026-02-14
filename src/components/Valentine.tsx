@@ -6,7 +6,6 @@ import '../styles/valentine.css';
 
 const Valentine = () => {
     const [noCount, setNoCount] = useState(0);
-    const [yesPressed, setYesPressed] = useState(false);
     const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
     const [isShocked, setIsShocked] = useState(false);
 
@@ -98,7 +97,6 @@ const Valentine = () => {
 
 
     const handleYesClick = () => {
-        setYesPressed(true);
         // Start survey instead of showing success immediately
         setShowSurvey(true);
     };
