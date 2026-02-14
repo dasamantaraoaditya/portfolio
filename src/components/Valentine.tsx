@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CatGame from './CatGame';
+import ValentineSurvey from './ValentineSurvey';
 import '../styles/valentine.css';
 
 const Valentine = () => {
@@ -55,10 +56,6 @@ const Valentine = () => {
         setNoButtonPosition({ x: randomX, y: randomY });
     };
 
-    const handleYesClick = () => {
-        setYesPressed(true);
-        createConfetti();
-    };
 
     const createConfetti = () => {
         const duration = 4000;
@@ -96,9 +93,32 @@ const Valentine = () => {
         return noThoughts[Math.min(noCount - 1, noThoughts.length - 1)];
     };
 
-    if (yesPressed) {
+    const [showSurvey, setShowSurvey] = useState(false);
+    const [surveyComplete, setSurveyComplete] = useState(false);
+
+
+    const handleYesClick = () => {
+        setYesPressed(true);
+        // Start survey instead of showing success immediately
+        setShowSurvey(true);
+    };
+
+    const handleSurveyComplete = () => {
+        setShowSurvey(false);
+        setSurveyComplete(true);
+        createConfetti();
+    };
+
+    // If survey is active
+    if (showSurvey) {
+        return <ValentineSurvey onComplete={handleSurveyComplete} />;
+    }
+
+    // If survey is done, show success
+    if (surveyComplete) {
         return (
             <div className="valentine-container success">
+                {/* ... existing success content ... */}
                 <motion.div
                     className="success-content"
                     initial={{ scale: 0, rotate: -180 }}
